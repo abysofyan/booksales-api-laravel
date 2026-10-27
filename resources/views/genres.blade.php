@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,11 +8,11 @@
 <body>
     <h1>Daftar Genre Buku</h1>
 
-    @foreach ($genres as $item)
+    @foreach ($genres as $genre)
         <ul>
-            <li>ID: {{ $item['id'] }}</li>
-            <li>Nama Genre: {{ $item['name'] }}</li>
-            <li>Deskripsi: {{ $item['description'] }}</li>
+            <li>ID: {{ $genre['id'] }}</li>
+            <li>Nama Genre: {{ $genre['name'] }}</li>
+            <li>Deskripsi: {{ $genre['description'] }}</li>
         </ul>
     @endforeach
 </body>

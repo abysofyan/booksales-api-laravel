@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Authors</title>
+    <title>Daftar Author</title>
 </head>
 <body>
-    <h1>Halaman Author Buku</h1>
+    <h1>Daftar Author Buku</h1>
 
-    @foreach ($authors as $item)
+    @forelse ($authors as $author)
         <ul>
-            <li>ID: {{ $item['id'] }}</li>
-            <li>Nama: {{ $item['name'] }}</li>
-            <li>Foto: {{ $item['photo'] }}</li>
-            <li>Bio: {{ $item['bio'] }}</li>
+            <li>ID: {{ $author->id }}</li>
+            <li>Nama: {{ $author->name }}</li>
+            <li>Foto: {{ $author->photo }}</li>
+            <li>Bio: {{ $author->bio }}</li>
         </ul>
-    @endforeach
+    @empty
+        <p>Belum ada data author.</p>
+    @endforelse
 </body>
 </html>

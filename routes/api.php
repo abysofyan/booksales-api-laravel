@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\AuthorController;
@@ -13,11 +14,12 @@ Route::get('/user', function (Request $request) {
 // Books
 Route::get('/books', [BookController::class, 'index']);
 Route::post('/books', [BookController::class, 'store']);
+Route::get('/books/{id}', [BookController::class, 'show']);
+Route::delete('/books/{id}', [BookController::class, 'destroy']);
+Route::put('/books/{id}', [BookController::class, 'update']);
 
 // Authors
-Route::get('/authors', [AuthorController::class, 'index']);
-Route::post('/authors', [AuthorController::class, 'store']);
+Route::apiResource('authors', AuthorController::class);
 
 // Genres
-Route::get('/genres', [GenreController::class, 'index']);
-Route::post('/genres', [GenreController::class, 'store']);
+Route::apiResource('genres', GenreController::class);
